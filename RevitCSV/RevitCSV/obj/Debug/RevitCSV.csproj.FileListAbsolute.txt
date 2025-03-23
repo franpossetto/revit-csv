@@ -1,0 +1,9 @@
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.csproj.AssemblyReference.cache
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.Properties.Resources.resources
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.csproj.GenerateResource.cache
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\bin\Debug\RevitCSV.addin
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\bin\Debug\RevitCSV.dll
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\bin\Debug\RevitCSV.pdb
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.dll
+C:\Users\franc\source\repos\RevitCSV\RevitCSV\obj\Debug\RevitCSV.pdb
