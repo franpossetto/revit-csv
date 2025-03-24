@@ -5,7 +5,7 @@
 
 Export data from your Revit model to CSV with one click.
 
-![demo](Resources/release-v1.0.0-revit-csv/demo.gif)
+![demo](RevitCSV/RevitCSV/Resources/release-v1.0.0-revit-csv.gif)
 
 ## Installation
 
