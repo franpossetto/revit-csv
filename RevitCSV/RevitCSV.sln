@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitCSV", "RevitCSV\RevitCSV.csproj", "{72158E33-90B1-4A9E-AF03-1D821326C2FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitCSV.Installer", "RevitCSV.Installer\RevitCSV.Installer.csproj", "{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{72158E33-90B1-4A9E-AF03-1D821326C2FE}.R2020|Any CPU.Build.0 = R2020|Any CPU
 		{72158E33-90B1-4A9E-AF03-1D821326C2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72158E33-90B1-4A9E-AF03-1D821326C2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2017|Any CPU.ActiveCfg = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2017|Any CPU.Build.0 = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2018|Any CPU.ActiveCfg = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2018|Any CPU.Build.0 = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2019|Any CPU.ActiveCfg = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2019|Any CPU.Build.0 = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2020|Any CPU.ActiveCfg = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.R2020|Any CPU.Build.0 = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590DF1CE-98EB-4FAB-BAA2-AF3313ABD621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

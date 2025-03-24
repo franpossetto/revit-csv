@@ -1,4 +1,5 @@
 ﻿using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using Services.Exporter;
 using System;
 using System.Collections.Generic;
@@ -101,6 +102,67 @@ namespace Services
 
             _exporter.Export(data, path);
         }
+
+        public void ExportMatrixInfoV2(List<Element> elements, string documentTitle)
+        {
+            var headers = new List<string> { "ElementId", "Category", "Name" };
+            var headerIndex = new Dictionary<string, int>
+    {
+        { "ElementId", 0 },
+        { "Category", 1 },
+        { "Name", 2 }
+    };
+
+            var rows = new List<List<string>>();
+
+            foreach (var element in elements)
+            {
+                var row = new List<string> {
+            element.Id.IntegerValue.ToString(),
+            element.Category?.Name ?? "",
+            element.Name ?? ""
+        };
+
+                foreach (Parameter param in element.Parameters)
+                {
+                    if (param.Definition is InternalDefinition def &&
+                        def.BuiltInParameter != BuiltInParameter.INVALID)
+                    {
+                        var paramName = def.Name;
+
+                        if (!headerIndex.ContainsKey(paramName))
+                        {
+                            headerIndex[paramName] = headers.Count;
+                            headers.Add(paramName);
+                            foreach (var existingRow in rows)
+                                existingRow.Add("");
+                        }
+
+                        while (row.Count <= headerIndex[paramName])
+                            row.Add("");
+
+                        row[headerIndex[paramName]] = param.AsValueString() ?? "";
+                    }
+                }
+
+                rows.Add(row);
+            }
+
+            var data = new TabularData
+            {
+                Headers = headers,
+                Rows = rows
+            };
+
+            var folder = Path.Combine("C:\\revit-csv", documentTitle);
+            Directory.CreateDirectory(folder);
+            var fileName = $"matrix_export_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+            var path = Path.Combine(folder, fileName);
+
+            _exporter.Export(data, path);
+
+        }
+
 
     }
 }

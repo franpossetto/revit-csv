@@ -45,7 +45,7 @@ namespace RevitCSV
 
                 var exporter = new CsvExporter();
                 var exportService = new ElementExporterService(exporter);
-                exportService.ExportMatrixInfo(allElements, doc.Title);
+                exportService.ExportMatrixInfoV2(allElements, doc.Title);
 
                 TaskDialog.Show("Export", "Export completed");
                 return Result.Succeeded;

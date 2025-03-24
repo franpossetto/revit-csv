@@ -22,22 +22,22 @@ namespace RevitCSV
             /// Create a new Tab on Ribbon Bar.
             /// </summary>
 
-            const string RIBBON_TAB = "Revit API Extension";
+            const string RIBBON_TAB = "Revit CSV";
             Ribbon.CreateRibbonTab(application, RIBBON_TAB);
 
             /// <summary>
             /// Create a new Panel on Ribbon Tab.
             /// </summary>
 
-            const string RIBBON_PANEL = "My Addins";
+            const string RIBBON_PANEL = "Export";
             RibbonPanel ribbonPanel = Ribbon.CreateRibbonPanel(application, RIBBON_PANEL, RIBBON_TAB);
 
             /// <summary>
             /// Create new Buttons on Panel.
             /// </summary>
             /// 
-            const string PUSH_BUTTON_NAME = "Revit Push Button";
-            const string PUSH_BUTTON_TEXT = "Revit Plugin";
+            const string PUSH_BUTTON_NAME = "Revit CSV \nExporter";
+            const string PUSH_BUTTON_TEXT = "Revit CSV \nExporter";
 
             PushButtonData pushDataButton = Ribbon.CreatePushButtonData(PUSH_BUTTON_NAME, PUSH_BUTTON_TEXT, "RevitCSV.ExternalCommand");
 
