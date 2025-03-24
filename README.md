@@ -1,4 +1,4 @@
-# revit# RevitCSV
+## Revit CSV Export
 
 ![.NET](https://img.shields.io/badge/.NET-4.8-green.svg)
 ![Revit API](https://img.shields.io/badge/RevitAPI-2023-blue.svg)
@@ -9,7 +9,7 @@ Export data from your Revit model to CSV with one click.
 
 ## Installation
 
-Run the installer provided in the [latest release](https://github.com/franpossetto/revit-csv/releases/latest).
+Run the installer provided in the [latest release](https://github.com/franpossetto/revit-csv/releases/latest/download/RevitCSV.exe).
 
 ## Overview
 
