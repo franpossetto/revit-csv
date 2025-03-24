@@ -13,5 +13,8 @@ Run the installer provided in the [latest release](https://github.com/franposset
 
 ## Overview
 
-RevitCSV is a simple Revit plugin that allows users to export model element data to a CSV file.  
-Use it to quickly get a structured overview of your model contents.
+- RevitCSV is a simple Revit plugin that allows users to export model element data to a CSV file. Files are saved to the `C:\revit-csv\{project_name}` folder, using a `{date}-export.csv` naming convention.
+
+
+
+
