@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 
 namespace Services
 {
@@ -101,6 +102,38 @@ namespace Services
             var path = Path.Combine(folder, fileName);
 
             _exporter.Export(data, path);
+        }
+
+        public List<Dictionary<String, String>> TransformElementsToObjects(List<Element> elements)
+        {
+            var collection = new List<Dictionary<String, String>>();
+
+            foreach (var element in elements) {
+                var obj = new Dictionary<String, String>();
+
+                obj["ElementId"] = element.Id.IntegerValue.ToString();
+                obj["Category"] = element.Category?.Name ?? "";
+                obj["Name"] = element.Name ?? "";
+
+
+                foreach (Parameter param in element.Parameters)
+                {
+                    if (param.Definition is InternalDefinition def &&
+                        def.BuiltInParameter != BuiltInParameter.INVALID)
+                    {
+                        var paramName = def.Name;
+                        obj[paramName] = param.AsValueString() ?? "";
+                    }
+                }
+
+            }
+
+            return collection;
+        }
+
+        public void ExportMatrixInfoV3(List<Dictionary<String, String>> collection, string documentTitle)
+        {
+
         }
 
         public void ExportMatrixInfoV2(List<Element> elements, string documentTitle)
