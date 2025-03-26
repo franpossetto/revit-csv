@@ -45,7 +45,16 @@ namespace RevitCSV
 
                 var exporter = new CsvExporter();
                 var exportService = new ElementExporterService(exporter);
-                exportService.ExportMatrixInfoV2(allElements, doc.Title);
+
+                var collection = exportService.TransformElementsToObjects(allElements);
+                // for all objects in collection, add a key "RevitVersion" with the current version
+                foreach (var obj in collection)
+                {
+                    obj["RevitVersion"] = commandData.Application.Application.VersionName;
+                }
+
+
+                exportService.ExportMatrixInfoV3(collection, doc.Title);
 
                 TaskDialog.Show("Export", "Export completed");
                 return Result.Succeeded;

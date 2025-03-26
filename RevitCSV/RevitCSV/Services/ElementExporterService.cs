@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Xml.Linq;
 
 namespace Services
 {
@@ -86,6 +88,83 @@ namespace Services
                     }
                 }
 
+                rows.Add(row);
+            }
+
+            var data = new TabularData
+            {
+                Headers = headers,
+                Rows = rows
+            };
+
+            var folder = Path.Combine("C:\\revit-csv", documentTitle);
+            Directory.CreateDirectory(folder);
+            var fileName = $"matrix_export_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+            var path = Path.Combine(folder, fileName);
+
+            _exporter.Export(data, path);
+        }
+
+        public List<Dictionary<String, String>> TransformElementsToObjects(List<Element> elements)
+        {
+            var collection = new List<Dictionary<String, String>>();
+
+            foreach (var element in elements)
+            {
+                var obj = new Dictionary<String, String>();
+
+                obj["ElementId"] = element.Id.IntegerValue.ToString();
+                obj["Category"] = element.Category?.Name ?? "";
+                obj["Name"] = element.Name ?? "";
+
+
+                foreach (Parameter param in element.Parameters)
+                {
+                    if (param.Definition is InternalDefinition def &&
+                        def.BuiltInParameter != BuiltInParameter.INVALID)
+                    {
+                        var paramName = def.Name;
+                        obj[paramName] = param.AsValueString() ?? "";
+                    }
+                }
+
+                collection.Add(obj);
+            }
+
+            return collection;
+        }
+
+
+        public void ExportMatrixInfoV3(List<Dictionary<String, String>> collection, string documentTitle)
+        {
+            // headers are the unique keys from all the objects
+            var headers = new List<string>();
+            foreach (var obj in collection)
+            {
+                foreach (var key in obj.Keys)
+                {
+                    if (!headers.Contains(key))
+                    {
+                        headers.Add(key);
+                    }
+                }
+            }
+
+            var rows = new List<List<string>>();
+            foreach (var obj in collection)
+            {
+                var row = new List<string>();
+                foreach (var header in headers)
+                {
+                    if (obj.ContainsKey(header))
+                    {
+                        row.Add(obj[header]);
+                    }
+                    else
+                    {
+                        row.Add("");
+                    }
+                }
                 rows.Add(row);
             }
 

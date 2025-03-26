@@ -80,14 +80,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI, Version=23.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Revit_All_Main_Versions_API_x64.2023.0.0\lib\net48\RevitAPI.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <HintPath>..\packages\Revit.RevitApi.x64.2023.0.0\lib\net48\RevitAPI.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPIUI, Version=23.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Revit_All_Main_Versions_API_x64.2023.0.0\lib\net48\RevitAPIUI.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <HintPath>..\packages\Revit.RevitApiUI.x64.2023.0.0\lib\net48\RevitAPIUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -143,34 +139,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo Configuration: $(Configuration)
-    if $(Configuration) == R2017 goto 2017
-    if $(Configuration) == R2018 goto 2018
-    if $(Configuration) == R2019 goto 2019
-    if $(Configuration) == R2020 goto 2020
-
-    :2017
-    echo Copying results to 2017
-    copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2017\"
-    goto exit
-
-    :2018
-    echo Copying results to 2018
-    copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2018\"
-    goto exit
-
-    :2019
-    echo Copying results to 2019
-    copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2019\"
-    goto exit
-
-
-    :2020
-    echo Copying results to 2020
-    copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2020\"
-    goto exit
-
-    :exit
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
