@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,5 +75,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RevitCSV.Common\RevitCSV.Common.csproj">
+      <Project>{cb40efb9-54e4-4dd1-8bc3-567be5794f90}</Project>
+      <Name>RevitCSV.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\RevitCSV.Services\RevitCSV.Services.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

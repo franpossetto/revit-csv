@@ -2,7 +2,7 @@
 <RevitAddIns>
   <AddIn Type="Application">
     <Name>RevitCSV</Name>
-    <FullClassName>RevitCSV.ExternalApplication</FullClassName>
+    <FullClassName>RevitCSV.Services.ExternalApplication</FullClassName>
     <Text>RevitCSV</Text>
     <Description>RevitCSV</Description>
     <VisibilityMode>AlwaysVisible</VisibilityMode>

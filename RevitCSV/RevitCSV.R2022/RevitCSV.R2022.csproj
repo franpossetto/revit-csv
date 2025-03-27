@@ -36,6 +36,8 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI, Version=22.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\Revit_All_Main_Versions_API_x64.2022.0.0\lib\net48\RevitAPI.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -48,6 +50,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +63,7 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,5 +75,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RevitCSV.Common\RevitCSV.Common.csproj">
+      <Project>{cb40efb9-54e4-4dd1-8bc3-567be5794f90}</Project>
+      <Name>RevitCSV.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\RevitCSV.Services\RevitCSV.Services.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
