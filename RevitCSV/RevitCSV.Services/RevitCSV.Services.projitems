@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>7bad5848-8dea-4fd1-a3b1-738414ab4303</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>RevitCSV.Services</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ExternalApplication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExportCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Ribbon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Collector\IElementCollector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Collector\MatrixElementCollector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ElementCollectorService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ElementExporterService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exporter\CSVExporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exporter\IExporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exporter\TabularData.cs" />
+  </ItemGroup>
+</Project>

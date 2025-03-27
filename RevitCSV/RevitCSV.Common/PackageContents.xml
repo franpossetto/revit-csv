@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0"
+                    AutodeskProduct="Revit"
+                    ProductType="Application"
+                    Name="Revit CSV"
+                    AppVersion="1.0.0.0"
+                    Description="CSV Export"
+                    Author="Libo, Fran"
+                    Icon=""
+                    AppNameSpace=""
+                    OnlineDocumentation=""
+                    HelpFile=""
+                    ProductCode=""
+                    UpgradeCode=""
+                    SupportedLocales="Enu"
+                    FriendlyVersion="1.0.0.0">
+
+	<Components Description="2021">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2021" SeriesMax="R2021" />
+		<ComponentEntry AppName="Revit CSV" Version="2021" ModuleName="./Contents/2021/RevitCSV.2021.addin" AppDescription="RevitCSV" />
+	</Components>
+
+	<Components Description="2022">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2022" SeriesMax="R2022" />
+		<ComponentEntry AppName="Revit CSV" Version="2022" ModuleName="./Contents/2022/RevitCSV.R2022.addin" AppDescription="RevitCSV" />
+	</Components>
+
+	<Components Description="2023">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2023" SeriesMax="R2023" />
+		<ComponentEntry AppName="Revit CSV" Version="2023" ModuleName="./Contents/2023/RevitCSV.R2023.addin" AppDescription="RevitCSV" />
+	</Components>
+
+	<Components Description="2024">
+		<RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2024" SeriesMax="R2024" />
+		<ComponentEntry AppName="Revit CSV" Version="2024" ModuleName="./Contents/2024/RevitCSV.R2024.addin" AppDescription="RevitCSV" />
+	</Components>
+
+</ApplicationPackage>
